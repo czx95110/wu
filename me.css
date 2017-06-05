@@ -1,0 +1,183 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+  background: #ddd; }
+
+.panel {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  padding: 15px;
+  background: #999; }
+
+.cell {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer; }
+  .cell.active {
+    border-radius: 50%; }
+    .cell.active:before {
+      display: none; }
+    .cell.active:after {
+      display: none; }
+  .cell.white {
+    background-image: radial-gradient(circle, white 10%, #eeeeee 80%, white 10%); }
+  .cell.black {
+    background-image: radial-gradient(#999999 10%, #111111 60%, black 30%); }
+  .cell:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black; }
+  .cell:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 1px;
+    height: 100%;
+    background: #000; }
+  .cell.top:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: red; }
+  .cell.top:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: red; }
+  .cell.right:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 30px;
+    background: blue; }
+  .cell.right:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background: blue; }
+  .cell.bottom:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: purple; }
+  .cell.bottom:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: purple; }
+  .cell.left:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 30px;
+    background: green; }
+  .cell.left:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 15px;
+    height: 1px;
+    background: green; }
+  .cell.top.left:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: orange; }
+  .cell.top.left:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 15px;
+    height: 1px;
+    background: orange; }
+  .cell.top.right:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: white; }
+  .cell.top.right:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background: white; }
+  .cell.bottom.left:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: orange; }
+  .cell.bottom.left:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 15px;
+    height: 1px;
+    background: orange; }
+  .cell.bottom.right:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 1px;
+    height: 15px;
+    background: white; }
+  .cell.bottom.right:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background: white; }
+  .cell:hover {
+    border: 1px dotted forestgreen;
+    border-radius: 50%; }
+    .cell:hover:before {
+      display: none; }
+    .cell:hover:after {
+      display: none; }

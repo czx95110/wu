@@ -1,0 +1,228 @@
+.container{
+  width: 800px;
+  margin: 0 auto;
+  background: #ddd;
+}
+.panel{
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  padding: 15px;
+  background: #999;
+}
+.cell{
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  &.active{
+    border-radius: 50%;
+    &:before{
+      display: none;
+    }
+    &:after{
+      display: none;
+    }
+  }
+  &.white{
+    background-image: radial-gradient(circle,#fff 10%,#eee 80%,#fff 10%);
+  }
+  &.black{
+    background-image: radial-gradient(#999 10%, #111111 60%, black 30%);
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 1px;
+    height: 100%;
+    background: #000;
+  }
+  &.top{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      background: red;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: red;
+    }
+
+  }
+  &.right{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 1px;
+      height: 30px;
+      background: blue;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 15px;
+      height: 1px;
+      background: blue;
+    }
+  }
+  &.bottom{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      background: purple;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: purple;
+    }
+
+  }
+  &.left{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 1px;
+      height: 30px;
+      background: green;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 15px;
+      height: 1px;
+      background: green;
+    }
+  }
+  &.top.left{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: orange;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 15px;
+      height: 1px;
+      background: orange;
+    }
+  }
+  &.top.right{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: white;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 15px;
+      height: 1px;
+      background: white;
+    }
+  }
+  &.bottom.left{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: orange;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 15px;
+      height: 1px;
+      background: orange;
+    }
+  }
+  &.bottom.right{
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 1px;
+      height: 15px;
+      background: white;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 15px;
+      height: 1px;
+      background: white;
+    }
+  }
+  &:hover{
+    border: 1px dotted forestgreen;
+    border-radius: 50%;
+    &:before{
+      display: none;
+    }
+    &:after{
+      display: none;
+    }
+  }
+}
