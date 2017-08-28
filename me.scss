@@ -1,12 +1,18 @@
 .container{
   width: 800px;
   margin: 0 auto;
+  padding-bottom: 30px;
   background: #ddd;
+}
+.title{
+  margin:5px;
+  padding: 5px;
+  text-align: center;
 }
 .panel{
   position: relative;
-  width: 450px;
-  height: 450px;
+  width: 570px;
+  height: 570px;
   margin: 0 auto;
   padding: 15px;
   background: #999;
@@ -19,6 +25,7 @@
   height: 30px;
   text-align: center;
   line-height: 30px;
+  border-radius: 50%;
   cursor: pointer;
   &.active{
     border-radius: 50%;
@@ -61,7 +68,7 @@
       left: 0;
       width: 30px;
       height: 1px;
-      background: red;
+      background: #000;
     }
     &:after{
       content: '';
@@ -70,7 +77,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: red;
+      background: #000;
     }
 
   }
@@ -82,7 +89,7 @@
       left: 15px;
       width: 1px;
       height: 30px;
-      background: blue;
+      background: #000;
     }
     &:after{
       content: '';
@@ -91,7 +98,7 @@
       left: 0;
       width: 15px;
       height: 1px;
-      background: blue;
+      background: #000;
     }
   }
   &.bottom{
@@ -102,7 +109,7 @@
       left: 0;
       width: 30px;
       height: 1px;
-      background: purple;
+      background: #000;
     }
     &:after{
       content: '';
@@ -111,7 +118,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: purple;
+      background: #000;
     }
 
   }
@@ -123,7 +130,7 @@
       left: 15px;
       width: 1px;
       height: 30px;
-      background: green;
+      background: #000;
     }
     &:after{
       content: '';
@@ -132,7 +139,7 @@
       left: 15px;
       width: 15px;
       height: 1px;
-      background: green;
+      background: #000;
     }
   }
   &.top.left{
@@ -224,5 +231,19 @@
     &:after{
       display: none;
     }
+  }
+}
+.btns{
+  padding: 5px 0;
+  text-align: center;
+  .btn{
+    height: 30px;
+    padding: 0 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    background: #5d5551;
+    color: #fff;
+    cursor: pointer;
   }
 }
