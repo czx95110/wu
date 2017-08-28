@@ -143,7 +143,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: orange;
+      background: #000;
     }
     &:after{
       content: '';
@@ -152,7 +152,7 @@
       left: 15px;
       width: 15px;
       height: 1px;
-      background: orange;
+      background: #000;
     }
   }
   &.top.right{
@@ -163,7 +163,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: white;
+      background: #000;
     }
     &:after{
       content: '';
@@ -172,7 +172,7 @@
       left: 0;
       width: 15px;
       height: 1px;
-      background: white;
+      background: #000;
     }
   }
   &.bottom.left{
@@ -183,7 +183,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: orange;
+      background: #000;
     }
     &:after{
       content: '';
@@ -192,7 +192,7 @@
       left: 15px;
       width: 15px;
       height: 1px;
-      background: orange;
+      background: #000;
     }
   }
   &.bottom.right{
@@ -203,7 +203,7 @@
       left: 15px;
       width: 1px;
       height: 15px;
-      background: white;
+      background: #000;
     }
     &:after{
       content: '';
@@ -212,11 +212,11 @@
       left: 0;
       width: 15px;
       height: 1px;
-      background: white;
+      background: #000;
     }
   }
   &:hover{
-    border: 1px dotted forestgreen;
+    border: 1px dotted green;
     border-radius: 50%;
     &:before{
       display: none;

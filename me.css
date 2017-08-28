@@ -27,9 +27,9 @@
     .cell.active:after {
       display: none; }
   .cell.white {
-    background-image: radial-gradient(circle, white 10%, #eeeeee 80%, white 10%); }
+    background-image: radial-gradient(circle, #fff 10%, #eee 80%, #fff 10%); }
   .cell.black {
-    background-image: radial-gradient(#999999 10%, #111111 60%, black 30%); }
+    background-image: radial-gradient(#999 10%, #111111 60%, black 30%); }
   .cell:before {
     content: '';
     position: absolute;
@@ -117,7 +117,7 @@
     left: 15px;
     width: 1px;
     height: 15px;
-    background: orange; }
+    background: #000; }
   .cell.top.left:after {
     content: '';
     position: absolute;
@@ -125,7 +125,7 @@
     left: 15px;
     width: 15px;
     height: 1px;
-    background: orange; }
+    background: #000; }
   .cell.top.right:before {
     content: '';
     position: absolute;
@@ -133,7 +133,7 @@
     left: 15px;
     width: 1px;
     height: 15px;
-    background: white; }
+    background: #000; }
   .cell.top.right:after {
     content: '';
     position: absolute;
@@ -141,7 +141,7 @@
     left: 0;
     width: 15px;
     height: 1px;
-    background: white; }
+    background: #000; }
   .cell.bottom.left:before {
     content: '';
     position: absolute;
@@ -149,7 +149,7 @@
     left: 15px;
     width: 1px;
     height: 15px;
-    background: orange; }
+    background: #000; }
   .cell.bottom.left:after {
     content: '';
     position: absolute;
@@ -157,7 +157,7 @@
     left: 15px;
     width: 15px;
     height: 1px;
-    background: orange; }
+    background: #000; }
   .cell.bottom.right:before {
     content: '';
     position: absolute;
@@ -165,7 +165,7 @@
     left: 15px;
     width: 1px;
     height: 15px;
-    background: white; }
+    background: #000; }
   .cell.bottom.right:after {
     content: '';
     position: absolute;
@@ -173,11 +173,13 @@
     left: 0;
     width: 15px;
     height: 1px;
-    background: white; }
+    background: #000; }
   .cell:hover {
-    border: 1px dotted forestgreen;
+    border: 1px dotted green;
     border-radius: 50%; }
     .cell:hover:before {
       display: none; }
     .cell:hover:after {
       display: none; }
+
+/*# sourceMappingURL=me.css.map */
