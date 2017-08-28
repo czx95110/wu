@@ -182,7 +182,7 @@
     height: 1px;
     background: #000; }
   .cell:hover {
-    border: 1px dotted green;
+    border: 1px dotted blue;
     border-radius: 50%; }
     .cell:hover:before {
       display: none; }

@@ -50,11 +50,11 @@ var gameFive = {
       if(isEmpty){
         if(this.player1){
           me.addClass('black active');
-          //me.html('+').siblings().html('');
+          me.html('+').siblings().html('');
           this.player1=false;
         }else{
           me.addClass('white active');
-          //me.html('+').siblings().html('');
+          me.html('+').siblings().html('');
           this.player1=true;
         }
       }
