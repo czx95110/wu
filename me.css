@@ -26,7 +26,8 @@
   text-align: center;
   line-height: 30px;
   border-radius: 50%;
-  cursor: pointer; }
+  cursor: pointer;
+  color: #f00; }
   .cell.active {
     border-radius: 50%; }
     .cell.active:before {
@@ -34,8 +35,10 @@
     .cell.active:after {
       display: none; }
   .cell.white {
+    background: url("q-white.png") no-repeat;
     background-image: radial-gradient(circle, #fff 10%, #eee 80%, #fff 10%); }
   .cell.black {
+    background: url("q-black.png") no-repeat;
     background-image: radial-gradient(#999 10%, #111111 60%, black 30%); }
   .cell:before {
     content: '';
@@ -192,14 +195,45 @@
 .btns {
   padding: 5px 0;
   text-align: center; }
-  .btns .btn {
-    height: 30px;
-    padding: 0 20px;
-    border: 0;
-    outline: 0;
-    border-radius: 50px;
-    background: #5d5551;
-    color: #fff;
-    cursor: pointer; }
+
+.btn {
+  height: 30px;
+  padding: 0 20px;
+  margin: 0 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 50px;
+  background: #5d5551;
+  color: #fff;
+  cursor: pointer; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1314;
+  background: rgba(0, 0, 0, 0.4);
+  display: none; }
+  .modal.active {
+    display: block; }
+  .modal .modal-content {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -200px;
+    border-radius: 10px;
+    background: rgba(235, 235, 255, 0.8); }
+  .modal .modal-content-body {
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #2a48bb; }
+  .modal .modal-content-footer {
+    text-align: center; }
 
 /*# sourceMappingURL=me.css.map */

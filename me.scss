@@ -27,6 +27,7 @@
   line-height: 30px;
   border-radius: 50%;
   cursor: pointer;
+  color: #f00;
   &.active{
     border-radius: 50%;
     &:before{
@@ -37,9 +38,11 @@
     }
   }
   &.white{
+    background: url("q-white.png")no-repeat;
     background-image: radial-gradient(circle,#fff 10%,#eee 80%,#fff 10%);
   }
   &.black{
+    background: url("q-black.png")no-repeat;
     background-image: radial-gradient(#999 10%, #111111 60%, black 30%);
   }
   &:before{
@@ -236,14 +239,50 @@
 .btns{
   padding: 5px 0;
   text-align: center;
-  .btn{
-    height: 30px;
-    padding: 0 20px;
-    border: 0;
-    outline: 0;
-    border-radius: 50px;
-    background: #5d5551;
-    color: #fff;
-    cursor: pointer;
+}
+.btn{
+  height: 30px;
+  padding: 0 20px;
+  margin: 0 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 50px;
+  background: #5d5551;
+  color: #fff;
+  cursor: pointer;
+}
+.modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1314;
+  background: rgba(0,0,0,.4);
+  display: none;
+  &.active{
+    display: block;
+  }
+  .modal-content{
+    $width:400px;
+    $height:100px;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: 50%;
+    left: 50%;
+    margin: (-$height/2) 0 0 (-$width/2);
+    border-radius: 10px;
+    background: rgba(235,235,255,.8);
+  }
+  .modal-content-body{
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #2a48bb;
+  }
+  .modal-content-footer{
+    text-align: center;
   }
 }

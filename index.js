@@ -1,46 +1,45 @@
 
 var gameFive = {
   panel:$('#gamePanel'),
-  line:19,
-  tmpHtml:'',
+  grid:19,
   player1:true,
   addCell: function (pstClass,i,j) {
-    return `<b id="cid_${i}_${j}" class="cell ${pstClass}"></b>`;
-
+    //return `<b id="cid_${i}_${j}" class="cell ${pstClass}"></b>`;
+    return '<b id="cid_'+i+'_'+j+'" class="cell '+pstClass+'"></b>';
   },
   drawPanel: function () {
-    for (var i = 0; i < this.line; i++) {
-      for (var j = 0; j < this.line; j++) {
+    var html = '';
+    for (var i = 0; i < this.grid; i++) {
+      for (var j = 0; j < this.grid; j++) {
         if(i==0) {
           if (j == 0) {
-            this.tmpHtml += this.addCell('top left', i, j);
+            html += this.addCell('top left', i, j);
 
-          } else if (j == this.line - 1) {
-            this.tmpHtml += this.addCell('top right', i, j);
+          } else if (j == this.grid - 1) {
+            html += this.addCell('top right', i, j);
           } else {
-            this.tmpHtml += this.addCell('top', i, j);
+            html += this.addCell('top', i, j);
           }
-        }else if(i==this.line-1){
+        }else if(i==this.grid-1){
           if (j == 0) {
-            this.tmpHtml += this.addCell('bottom left', i, j);
+            html += this.addCell('bottom left', i, j);
 
-          } else if (j == this.line - 1) {
-            this.tmpHtml += this.addCell('bottom right', i, j);
+          } else if (j == this.grid - 1) {
+            html += this.addCell('bottom right', i, j);
           } else {
-            this.tmpHtml += this.addCell('bottom', i, j);
+            html += this.addCell('bottom', i, j);
           }
         } else  if (j == 0) {
-          this.tmpHtml += this.addCell(' left', i, j);
+          html += this.addCell(' left', i, j);
 
-        } else if (j == this.line - 1) {
-          this.tmpHtml += this.addCell(' right', i, j);
+        } else if (j == this.grid - 1) {
+          html += this.addCell(' right', i, j);
         } else {
-          this.tmpHtml += this.addCell('', i, j);
+          html += this.addCell('', i, j);
         }
       }
     }
-    this.panel.html(this.tmpHtml);
-    this.tmpHtml='';
+    this.panel.html(html);
   },
   chess: function () {
     this.panel.on('click','.cell', function (e) {
@@ -62,9 +61,15 @@ var gameFive = {
     }.bind(this));
   },
   addBtnEvents: function () {
-    var btnReset = $('#resetGame');
+    var btnReset = $('#btnReset');
     btnReset.on('click', function (e) {
      this.drawPanel();
+    }.bind(this));
+    var btnAgain = $('#btnAgain');
+
+    btnAgain.on('click', function (e) {
+      $('.modal').removeClass('active');
+      this.drawPanel();
     }.bind(this));
   },
   isWin: function (e) {
@@ -72,6 +77,7 @@ var gameFive = {
         str = me.attr('id').split('_'),
         row = parseInt(str[1]), //当前单元格所在行号
         col = parseInt(str[2]); //当前单元格所在列号
+    console.log('row: '+row,' col: '+ col);
     var rules={
       direction1:[],
       direction2:[],
@@ -80,19 +86,70 @@ var gameFive = {
     };
     // 水平方向判断
     function horizontalJudge() {
-
+      var i, //循环变量
+          left = col-4,
+          len = left+9,
+          list = [], // 当前点击格的左右各加4格及本身
+          flag=0, // 已连接的棋子数量。
+          currentColor='black';//当前棋子颜色
+      for( i=left;i<len;i++){
+        list.push($('#cid_'+row+'_'+i));
+      }
+      if(me.hasClass('white')){
+        currentColor='white';
+      }
+      judge(list,currentColor,flag);
     }
+    horizontalJudge();
     // 垂直方向判断
     function verticalJudge() {
-
+      var up = row-4,
+          len = up+9,
+          list = [],
+          flag = 0,
+          currentColor='black';
+      for( var i=0;i<len;i++){
+        list.push($('#cid_'+i+'_'+col));
+      }
+      if(me.hasClass('white')){
+        currentColor='white';
+      }
+      judge(list,currentColor,flag);
     }
+    verticalJudge();
     // 对角线 左上-右下
     function leftTopToRightBottomJudge() {
 
     }
+    leftTopToRightBottomJudge();
     // 对角线 左下-右上
     function leftBottomToRightTopJudge() {
+    }
+    leftBottomToRightTopJudge();
 
+    function judge(list ,currentColor,flag) {
+      for(var i=0;i<list.length;i++){
+        var tmp = list[i];
+        if(tmp.hasClass(currentColor)){
+          flag++;
+          if(flag>=5){
+            showWinner(currentColor);
+          }
+        }else{
+          flag=0;
+        }
+      }
+
+    }
+    function showWinner(winColor) {
+      $('.modal').addClass('active');
+      if(winColor==='white'){
+        winColor='白棋';
+      }else{
+        winColor='黑棋';
+      }
+      var msg = '恭喜 '+winColor+' 获胜 ';
+      $('.modal-content-body').html(msg);
     }
 
   },
@@ -106,6 +163,8 @@ var gameFive = {
 gameFive.init();
 
 
+
+console.log(gameFive);
 
 
 
